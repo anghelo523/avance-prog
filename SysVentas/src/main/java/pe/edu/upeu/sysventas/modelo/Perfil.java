@@ -1,22 +1,20 @@
 package pe.edu.upeu.sysventas.modelo;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Entity
-@Table(name = "upeu_categoria")
-public class Categoria {
+@Table(name = "upeu_perfil")
+public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
-    private Long idCategoria;
-    @Column(name = "nombre", nullable = false, length = 60)
+    @Basic(optional = false)
+    @Column(name = "id_perfil", nullable = false)
+    private Long idPerfil;
+    //@Size(max = 20)
     private String nombre;
+    //@Size(max = 6)
+    private String codigo;
 }
