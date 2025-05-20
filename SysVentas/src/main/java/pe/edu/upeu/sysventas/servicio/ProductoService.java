@@ -11,7 +11,8 @@ import java.util.List;
 
 @Service
 public class ProductoService {
-    private static final Logger logger = LoggerFactory.getLogger(ProductoService.class);
+    private static final Logger logger =
+            LoggerFactory.getLogger(ProductoService.class);
     @Autowired
     ProductoRepository productoRepository;
     // Create
@@ -35,5 +36,37 @@ public class ProductoService {
         return productoRepository.findById(idProducto).orElse(null);
     }
 
-
+    /*public List<ModeloDataAutocomplet> listAutoCompletProducto(String
+                                                                       nombre) {
+        List<ModeloDataAutocomplet> listarProducto = new ArrayList<>();
+        try {
+            for (Producto producto :
+                    productoRepository.listAutoCompletProducto(nombre + "%")) {
+                ModeloDataAutocomplet data = new ModeloDataAutocomplet();
+                data.setIdx(producto.getNombre());
+                data.setNameDysplay(String.valueOf(producto.getIdProducto()));
+                data.setOtherData(producto.getPu() + ":" +
+                        producto.getStock());
+                listarProducto.add(data);
+            }
+        } catch (Exception e) {
+            logger.error("Error al realizar la busqueda", e);
+        }
+        return listarProducto;
+    }
+    public List<ModeloDataAutocomplet> listAutoCompletProducto() {
+        List<ModeloDataAutocomplet> listarProducto = new ArrayList<>();
+        try {
+            for (Producto producto : productoRepository.findAll()) {ModeloDataAutocomplet data = new ModeloDataAutocomplet();
+                data.setIdx(String.valueOf(producto.getIdProducto()));
+                data.setNameDysplay(producto.getNombre());
+                data.setOtherData(producto.getPu() + ":" +
+                        producto.getStock());
+                listarProducto.add(data);
+            }
+        } catch (Exception e) {
+            logger.error("Error al realizar la busqueda", e);
+        }
+        return listarProducto;
+    }*/
 }
