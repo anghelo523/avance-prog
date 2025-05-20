@@ -1,16 +1,15 @@
 package pe.edu.upeu.sysventas.servicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import pe.edu.upeu.sysventas.modelo.Marca;
+import pe.edu.upeu.sysventas.repositorio.ClienteRepository;
 import pe.edu.upeu.sysventas.repositorio.MarcaRepository;
 
 import java.util.List;
 
-@Service
-public class MarcaService {
+public class ClienteService {
     @Autowired
-    private MarcaRepository marcaRepository;
+    private ClienteService clienteService;
 
     //create
     public Marca guardarEntidad(Marca to){return marcaRepository.save(to);}
