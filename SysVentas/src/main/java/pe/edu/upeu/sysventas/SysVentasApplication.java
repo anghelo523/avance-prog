@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.kordamp.bootstrapfx.BootstrapFX;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,13 +24,13 @@ public class SysVentasApplication extends Application /*implements CommandLineRu
 	private static ConfigurableApplicationContext configurableApplicationContext;
 	private Parent parent;
 	/*@Autowired
-	private MarcaRepository marcaRepository; */
+	private MarcaRepository marcaRepository;*/
 
 	public static void main(String[] args) {
-
 		//SpringApplication.run(SysVentasApplication.class, args);
 		launch(args);
 	}
+
 	@Override
 	public void init() throws Exception {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(SysVentasApplication.class);
@@ -41,17 +42,16 @@ public class SysVentasApplication extends Application /*implements CommandLineRu
 	}
 
 
-
 	@Override
 	public void start(Stage stage) throws Exception {
 		Scene scene = new Scene(parent);
+		scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 		//scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
 		stage.setScene(scene);
 		stage.setTitle("SysAlmacen Spring Java-FX");
 		stage.setResizable(false);
 		stage.show();
 	}
-
 
 	/*@Override
 	public void run(String... args) throws Exception {
